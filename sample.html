@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<title>サンプル | yuga.js TT Custom - yuga.jsの個人的なカスタマイズ</title>
+<!--<meta name="keywords" content="" />
+<meta name="description" content="" />-->
+<meta name="copyright" content="Copyright (c) dounokouno All rights reserved." />
+<link rel="stylesheet" type="text/css" href="css/screen.css" media="screen,print" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/yuga.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1187565-2']);
+_gaq.push(['_setDomainName', '.dounokouno.com']);
+_gaq.push(['_trackPageview']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<style type="text/css">
+table.alpha .even {
+	background: #eee;
+}
+.child .first-child {
+	font-weight: bold;
+}
+.child .last-child {
+	text-decoration: underline;
+}
+</style>
+</head>
+<body class="sample">
+<div id="header">
+	<div class="container">
+		<h1>サンプル | yuga.js TT Custom - yuga.jsの個人的なカスタマイズ</h1>
+	</div>
+</div>
+<div id="content">
+	<div class="container">
+		<!-- ad -->
+		<div class="ad">
+			<script type="text/javascript">
+			<!--
+			google_ad_client = "ca-pub-0137506408243442";
+			/* 2011-09-17 ttHTMLTemplate 728x90 */
+			google_ad_slot = "5972130006";
+			google_ad_width = 728;
+			google_ad_height = 90;
+			//-->
+			</script>
+			<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+		</div>
+		<!-- /ad -->
+		<!-- content -->
+		<div class="section">
+			<h2>ロールオーバー</h2>
+			<p><a href="javascript:void(0);"><img src="img/button.gif" alt="ボタン" width="117" height="36" class="btn" /></a></p>
+		</div>
+		<div class="section">
+			<h2>カテゴリ内ページの場合の表示</h2>
+			<p>「bodyのクラス」と「btnクラスを持つ親要素のクラス」が同じ場合に、ロールオーバー画像の表示します。</p>
+			<ul>
+				<li class="sample"><a href="javascript:void(0);"><img src="img/sample.gif" alt="サンプル" width="117" height="36" class="btn" /></a><br />
+					※ロールオーバー画像になる</li>
+				<li class="button"><a href="javascript:void(0);"><img src="img/button.gif" alt="ボタン" width="117" height="36" class="btn" /></a><br />
+					※ロールオーバー画像にならない</li>
+			</ul>
+		</div>
+		<div class="section">
+			<h2>外部リンク</h2>
+			<p><a href="http://dounokouno.com">どうのこうの</a></p>
+		</div>
+		<div class="section">
+			<h2>するするスクロール</h2>
+			<ul>
+				<li>↑ <a href="#header">ヘッダーへ</a></li>
+				<li>↓ <a href="#footer">フッターへ</a></li>
+			</ul>
+		</div>
+		<div class="section">
+			<h2>ストライプ</h2>
+			<p>&lt;tbody class="stripe"&gt; の場合</p>
+			<table class="alpha">
+				<thead>
+					<th>項目1</th>
+					<th>項目2</th>
+					<th>項目3</th>
+				</thead>
+				<tbody class="stripe">
+					<tr>
+						<td>奇数行</td>
+						<td>この文章はダミーです。</td>
+						<td>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</td>
+					</tr>
+					<tr>
+						<td>偶数行</td>
+						<td>この文章はダミーです。</td>
+						<td>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</td>
+					</tr>
+					<tr>
+						<td>奇数行</td>
+						<td>この文章はダミーです。</td>
+						<td>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</td>
+					</tr>
+					<tr>
+						<td>偶数行</td>
+						<td>この文章はダミーです。</td>
+						<td>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="section">
+			<h2>first-child、last-child</h2>
+			<p>&lt;ul class="child"&gt;の場合。<br />
+				first-childは太文字、last-childは下線を付ける。</p>
+			<ul class="child">
+				<li>項目1</li>
+				<li>項目2</li>
+				<li>項目3</li>
+				<li>項目4</li>
+				<li>項目5</li>
+			</ul>
+		</div>
+		<div class="section">
+			<h2>アイコン</h2>
+			<ul class="nonstyle">
+				<li><a href="mailto:info@example.jp">info@example.jp</a></li>
+				<li><a href="example.pdf">example.pdf</a></li>
+				<li><a href="example.doc">example.doc</a></li>
+				<li><a href="example.docx">example.docx</a></li>
+				<li><a href="example.xls">example.xls</a></li>
+				<li><a href="example.xlsx">example.xlsx</a></li>
+				<li><a href="example.ppt">example.ppt</a></li>
+				<li><a href="example.pptx">example.pptx</a></li>
+				<li><a href="example.zip">example.zip</a></li>
+			</ul>
+		</div>
+		<div class="section">
+			<h2>ボックスの高さを揃える</h2>
+			<div class="section">
+				<h3>親ボックスで揃える</h3>
+				<div class="cols-1-1-1 heightline-parent">
+					<div class="leftbox box">
+						<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+					</div>
+					<div class="centerbox box">
+						<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+					</div>
+					<div class="rightbox box">
+						<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<h3>グループで揃える（1行目の左と真ん中、2行目の真ん中と右のボックスを揃える場合の例）</h3>
+				<div class="cols-1-1-1">
+					<div class="leftbox box heightline-group1">
+						<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+					</div>
+					<div class="centerbox box heightline-group1">
+						<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+					</div>
+					<div class="rightbox box">
+						<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+					</div>
+				</div>
+				<div class="cols-1-1-1">
+					<div class="leftbox box">
+						<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+					</div>
+					<div class="centerbox box heightline-group2">
+						<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+					</div>
+					<div class="rightbox box heightline-group2">
+						<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<h2>トグル</h2>
+			<dl>
+				<dt><a href="javascript:void(0);" class="toggle">項目1</a></dt>
+				<dd>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</dd>
+				<dt><a href="javascript:void(0);" class="toggle">項目2</a></dt>
+				<dd>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</dd>
+				<dt><a href="javascript:void(0);" class="toggle">項目3</a></dt>
+				<dd>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</dd>
+			</dl>
+		</div>
+		<div class="section">
+			<h2>ポップアップウィンドウ</h2>
+			<div class="section">
+				<p><a href="popup.html" class="popup">ポップアップサンプル</a></p>
+			</div>
+			<div class="section">
+				<h3>オプション</h3>
+				<p>幅や高さ等、オプションで指定できます。</p>
+				<pre>$.yuga.popup({width:600, height:400});</pre>
+		</div>
+		<div class="section">
+			<div class="hr"><hr /></div>
+			<p>← <a href="index.html">トップページへ戻る</a></p>
+			<p class="pagetop">↑ <a href="#header">ページの先頭へ戻る</a></p>
+		</div>
+		<!-- /content -->
+	</div>
+</div>
+<div id="footer">
+	<div class="container">
+		<p class="copyright">Copyright &copy; <a href="http://dounokouno.com/" target="_blank">dounokouno</a> All rights reserved.</p>
+	</div>
+</div>
+</body>
+</html>

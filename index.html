@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<title>yuga.js TT Custom - yuga.jsの個人的なカスタマイズ</title>
+<!--<meta name="keywords" content="" />
+<meta name="description" content="" />-->
+<meta name="copyright" content="Copyright (c) dounokouno All rights reserved." />
+<link rel="stylesheet" type="text/css" href="css/screen.css" media="screen,print" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/yuga.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1187565-2']);
+_gaq.push(['_setDomainName', '.dounokouno.com']);
+_gaq.push(['_trackPageview']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</head>
+<body class="home">
+<div id="header">
+	<div class="container">
+		<h1>yuga.js TT Custom - yuga.jsの個人的なカスタマイズ</h1>
+	</div>
+</div>
+<div id="nav">
+	<div class="container">
+		<dl>
+			<dt>メニュー</dt>
+			<dd>
+				<ul>
+					<li><a href="#summary">概要</a></li>
+					<li><a href="#license">ライセンス</a></li>
+					<li><a href="#customs">改造内容</a></li>
+					<li><a href="#tips">Tips</a></li>
+					<li><a href="#check">動作確認環境</a></li>
+					<li><a href="#thanks">Special thanks</a></li>
+					<li><a href="#auther">制作者</a></li>
+				</ul>
+			</dd>
+		</dl>
+	</div>
+</div>
+<div id="content">
+	<div class="container">
+		<!-- ad -->
+		<div class="ad">
+			<script type="text/javascript">
+			<!--
+			google_ad_client = "ca-pub-0137506408243442";
+			/* 2011-09-17 ttHTMLTemplate 728x90 */
+			google_ad_slot = "5972130006";
+			google_ad_width = 728;
+			google_ad_height = 90;
+			//-->
+			</script>
+			<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+		</div>
+		<!-- /ad -->
+		<!-- content -->
+		<div class="section">
+			<h2 id="summary">概要</h2>
+			<p>yuga.js の個人的なカスタマイズです。<br />
+				何かの参考になれば幸いです。</p>
+			<p>使い方はサンプルページとサンプルページのソースにてご確認ください。</p>
+			<ul>
+				<li><a href="sample.html">サンプル</a></li>
+				<li><a href="https://github.com/dounokouno/yugajsTTCustom" target="_blank">ダウンロード（GitHub）</a></li>
+			</ul>
+		</div>
+		<div class="section">
+			<h2 id="license">ライセンス</h2>
+			<p>MIT License</p>
+		</div>
+		<div class="section">
+			<h2 id="customs">改造内容</h2>
+			<div class="section">
+				<h3>$.yuga.selflink</h3>
+				<p>削除</p>
+			</div>
+			<div class="section">
+				<h3>$.yuga.thickbox</h3>
+				<p>削除</p>
+			</div>
+			<div class="section">
+				<h3>$.yuga.rollover</h3>
+				<p>画像のpostfix : 「_on」→「 -over」</p>
+			</div>
+			<div class="section">
+				<h3>$.yuga.category（追加）</h3>
+				<p>カテゴリ内ページの場合、表示画像を変更（グローバルナビゲーション等に）</p>
+			</div>
+			<div class="section">
+				<h3>$.yuga.externalLink</h3>
+				<p>アイコンやクラス追加の処理を削除（クラス追加は$.yuga.iconで行う）</p>
+			</div>
+			<div class="section">
+				<h3>$.yuga.tab</h3>
+				<p>tabNavSelector : 「.tabNav」→「.tabnav」</p>
+			</div>
+			<div class="section">
+				<h3>$.yuga.stripe</h3>
+				<p>stripeクラスの子要素に適用するように修正<br />
+					（例：&lt;div class="stripe"&gt;&lt;/div&gt;）</p>
+			</div>
+			<div class="section">
+				<h3>$.yuga.css3class</h3>
+				<p>削除</p>
+			</div>
+			<div class="section">
+				<h3>$.yuga.child（追加）</h3>
+				<p>childクラスの子要素にfirst-child、last-childクラスを追加する</p>
+			</div>
+			<div class="section">
+				<h3>$.yuga.icon（追加）</h3>
+				<p>href属性の内容に合わせてアイコン用クラスを追加する</p>
+			</div>
+			<div class="section">
+				<h3>$.yuga.heightLine（追加）</h3>
+				<p>ボックスの高さを揃える</p>
+			</div>
+			<div class="section">
+				<h3>$.yuga.toggle（追加）</h3>
+				<p>クリックでトグル表示</p>
+			</div>
+			<div class="section">
+				<h3>$.yuga.popup（追加）</h3>
+				<p>ポップアップウィンドウを開く</p>
+			</div>
+		</div>
+		<div class="section">
+			<h2 id="tips">Tips</h2>
+			<p>heightLine、toggle、 popup は、必要なページにだけ読み込んだ方がいいかも。</p>
+			<pre>&lt;script type="text/javascript"&gt;
+$(function(){
+  $.yuga.toggle();
+  $.yuga.heightLine();
+  $.yuga.popup();
+});
+&lt;/script&gt;</pre>
+		</div>
+		<div class="section">
+			<h2 id="check">動作確認環境</h2>
+			<p>2011年9月18日時点</p>
+			<p>※途中</p>
+			<div class="section">
+				<h3>jQuery</h3>
+				<ul>
+					<li>1.6.4</li>
+				</ul>
+				<h3>ブラウザ</h3>
+				<h4>Mac</h4>
+				<ul>
+					<li>Firefox</li>
+					<li>Safari</li>
+					<li>Chrome</li>
+					<li>Opera</li>
+				</ul>
+				<h4>Windows</h4>
+				<ul>
+					<li>IE 6</li>
+					<li>IE 7</li>
+					<li>IE 8</li>
+					<li>IE 9</li>
+					<li>IE 10</li>
+					<li>Firefox</li>
+					<li>Safari</li>
+					<li>Chrome</li>
+					<li>Opera</li>
+				</ul>
+			</div>
+		</div>
+		<div class="section">
+			<h2 id="thanks">Special thanks</h2>
+			<ul>
+				<li><a href="http://jquery.com/" target="_blank">jQuery: The Write Less, Do More, JavaScript Library</a></li>
+				<li><a href="http://www.kyosuke.jp/yugajs/" target="_blank">yuga.js :: Kyosuke.jp</a></li>
+				<li><a href="http://blog.webcreativepark.net/2007/07/26-010338.html" target="_blank">ブロックレベル要素の高さを揃えるheightLine.js[to-R]</a></li>
+				<li><a href="http://okomotot.com/" target="_blank">オコモトットと。</a><br />
+					アイコンを作ってもらいました。</li>
+			</ul>
+		</div>
+		<div class="section">
+			<h2 id="auther">制作者</h2>
+			<ul>
+				<li><a href="http://dounokouno.com/" target="_blank">どうのこうの</a>（ブログ）</li>
+				<li><a href="http://twitter.com/dounokouno" target="_blank">tagawa (dounokouno) on Twitter</a></li>
+				<li>dounokouno[at]gmail.com</li>
+			</ul>
+			<p>ご不明点等あれば、ご連絡ください。</p>
+			<p class="pagetop">↑ <a href="#header">ページの先頭へ戻る</a></p>
+		</div>
+		<!-- /content -->
+	</div>
+</div>
+<div id="footer">
+	<div class="container">
+		<p class="copyright">Copyright &copy; <a href="http://dounokouno.com/" target="_blank">dounokouno</a> All rights reserved.</p>
+	</div>
+</div>
+</body>
+</html>
