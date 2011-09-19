@@ -26,12 +26,6 @@ _gaq.push(['_trackPageview']);
 table.alpha .even {
 	background: #eee;
 }
-.child .first-child {
-	font-weight: bold;
-}
-.child .last-child {
-	text-decoration: underline;
-}
 </style>
 </head>
 <body class="sample">
@@ -116,15 +110,29 @@ table.alpha .even {
 			</table>
 		</div>
 		<div class="section">
-			<h2>first-child、last-child</h2>
-			<p>&lt;ul class="child"&gt;の場合。<br />
-				first-childは太文字、last-childは下線を付ける。</p>
-			<ul class="child">
+			<h2>first-child、last-child、nth-child</h2>
+			<p>クラス名をJavaScriptで動的に表示するサンプル</p>
+			<script type="text/javascript">
+			<!--
+			$(function(){
+				$('.child').children().each(function(){
+					var text = $(this).text();
+					$(this).text(text + '（' + $(this).attr('class') + '）');
+				});;
+			});
+			//-->
+			</script>
+			<ol class="child">
 				<li>項目1</li>
 				<li>項目2</li>
 				<li>項目3</li>
 				<li>項目4</li>
 				<li>項目5</li>
+				<li>項目6</li>
+				<li>項目7</li>
+				<li>項目8</li>
+				<li>項目9</li>
+				<li>項目10</li>
 			</ul>
 		</div>
 		<div class="section">
@@ -158,7 +166,7 @@ table.alpha .even {
 				</div>
 			</div>
 			<div class="section">
-				<h3>グループで揃える（1行目の左と真ん中、2行目の真ん中と右のボックスを揃える場合の例）</h3>
+				<h3>グループで揃える（左と真ん中のボックスを揃える場合の例）</h3>
 				<div class="cols-1-1-1">
 					<div class="leftbox box heightline-group1">
 						<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
@@ -170,6 +178,9 @@ table.alpha .even {
 						<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
 					</div>
 				</div>
+			</div>
+			<div class="section">
+				<h3>グループで揃える（真ん中と右のボックスを揃える場合の例）</h3>
 				<div class="cols-1-1-1">
 					<div class="leftbox box">
 						<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>

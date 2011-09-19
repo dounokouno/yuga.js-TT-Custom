@@ -290,14 +290,27 @@
 				$(this).children(':even').addClass(c.oddClass);
 			});
 		},
-		//first-cchild、last-childクラスを追加
+		//first-cchild、last-child、nth-childクラスを追加
 		child: function(options) {
 			var c = $.extend({
 				selector:'.child',
 			}, options);
-			//:first-child, :last-childをクラスとして追加
-			$(c.selector + ' :first-child').addClass('first-child');
-			$(c.selector + ' :last-child').addClass('last-child');
+			$(c.selector).each(function(){
+				//:first-child, :last-childをクラスとして追加
+				$(this).children(':first-child').addClass('first-child');
+				$(this).children(':last-child').addClass('last-child');
+				//:nth-childをクラスとして追加
+				var n=0;
+				$(this).children().each(function(){
+					n++;
+					$(this).addClass('nth-child-'+n);
+					for (var i=2;i<=n;i++) {
+						if ((n%i) == 0) {
+							$(this).addClass('nth-child-'+i+'n');
+						}
+					}
+				});
+			});
 		},
 		//href属性の内容に合わせてアイコン用クラスを追加
 		icon: function() {
