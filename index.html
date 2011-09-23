@@ -8,9 +8,10 @@
 <!--<meta name="keywords" content="" />
 <meta name="description" content="" />-->
 <meta name="copyright" content="Copyright (c) dounokouno All rights reserved." />
-<link rel="stylesheet" type="text/css" href="css/screen.css" media="screen,print" />
+<link rel="stylesheet" type="text/css" href="http://etc.dounokouno.com/ttXHTMLTemplate/css/screen.css" media="screen,print" />
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/yuga.js"></script>
+<script type="text/javascript" src="js/yuga.onload.js"></script>
 <script type="text/javascript">
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-1187565-2']);
@@ -37,10 +38,10 @@ _gaq.push(['_trackPageview']);
 				<ul>
 					<li><a href="#summary">概要</a></li>
 					<li><a href="#license">ライセンス</a></li>
-					<li><a href="#customs">改造内容</a></li>
-					<li><a href="#tips">Tips</a></li>
+					<li><a href="#customs">カスタマイズ内容</a></li>
 					<li><a href="#check">動作確認環境</a></li>
 					<li><a href="#thanks">Special thanks</a></li>
+					<li><a href="#links">参考リンク</a></li>
 					<li><a href="#auther">制作者</a></li>
 				</ul>
 			</dd>
@@ -68,18 +69,20 @@ _gaq.push(['_trackPageview']);
 			<h2 id="summary">概要</h2>
 			<p>yuga.js の個人的なカスタマイズです。<br />
 				何かの参考になれば幸いです。</p>
-			<p>使い方はサンプルページとサンプルページのソースにてご確認ください。</p>
-			<ul>
-				<li><a href="sample.html">サンプル</a></li>
-				<li><a href="https://github.com/dounokouno/yugajsTTCustom" target="_blank">ダウンロード（GitHub）</a></li>
+			<p>使い方はサンプルページにてご確認ください。</p>
+			<ul class="nonstyle">
+				<li><a href="sample.html" class="arrow-right">サンプル</a></li>
+				<li><a href="https://github.com/dounokouno/yuga.js-TT-Custom">ダウンロード（GitHub）</a></li>
 			</ul>
+			<p class="pagetop"><a href="#header" class="arrow-up">ページの先頭へ戻る</a></p>
 		</div>
 		<div class="section">
 			<h2 id="license">ライセンス</h2>
 			<p>MIT License</p>
+			<p class="pagetop"><a href="#header" class="arrow-up">ページの先頭へ戻る</a></p>
 		</div>
 		<div class="section">
-			<h2 id="customs">改造内容</h2>
+			<h2 id="customs">カスタマイズ内容</h2>
 			<div class="section">
 				<h3>$.yuga.selflink</h3>
 				<p>削除</p>
@@ -106,8 +109,7 @@ _gaq.push(['_trackPageview']);
 			</div>
 			<div class="section">
 				<h3>$.yuga.stripe</h3>
-				<p>stripeクラスの子要素に適用するように修正<br />
-					（例：&lt;div class="stripe"&gt;&lt;/div&gt;）</p>
+				<p>削除（$.yuga.childに統合）</p>
 			</div>
 			<div class="section">
 				<h3>$.yuga.css3class</h3>
@@ -126,8 +128,8 @@ _gaq.push(['_trackPageview']);
 				<p>ボックスの高さを揃える</p>
 			</div>
 			<div class="section">
-				<h3>$.yuga.toggle（追加）</h3>
-				<p>クリックでトグル表示</p>
+				<h3>$.yuga.toggleBox（追加）</h3>
+				<p>クリックでスライド表示（FAX等に）</p>
 			</div>
 			<div class="section">
 				<h3>$.yuga.popup（追加）</h3>
@@ -135,20 +137,8 @@ _gaq.push(['_trackPageview']);
 			</div>
 		</div>
 		<div class="section">
-			<h2 id="tips">Tips</h2>
-			<p>heightLine、toggle、 popup は、必要なページにだけ読み込んだ方がいいかも。</p>
-			<pre>&lt;script type="text/javascript"&gt;
-$(function(){
-  $.yuga.toggle();
-  $.yuga.heightLine();
-  $.yuga.popup();
-});
-&lt;/script&gt;</pre>
-		</div>
-		<div class="section">
 			<h2 id="check">動作確認環境</h2>
-			<p>2011年9月18日時点</p>
-			<p>※途中</p>
+			<p>2011年9月23日時点</p>
 			<div class="section">
 				<h3>jQuery</h3>
 				<ul>
@@ -157,10 +147,10 @@ $(function(){
 				<h3>ブラウザ</h3>
 				<h4>Mac</h4>
 				<ul>
-					<li>Firefox</li>
-					<li>Safari</li>
-					<li>Chrome</li>
-					<li>Opera</li>
+					<li>Firefox 6</li>
+					<li>Safari 5</li>
+					<li>Chrome 14</li>
+					<li>Opera 11</li>
 				</ul>
 				<h4>Windows</h4>
 				<ul>
@@ -168,33 +158,40 @@ $(function(){
 					<li>IE 7</li>
 					<li>IE 8</li>
 					<li>IE 9</li>
-					<li>IE 10</li>
-					<li>Firefox</li>
-					<li>Safari</li>
-					<li>Chrome</li>
-					<li>Opera</li>
+					<li>Firefox 6</li>
+					<li>Safari 5</li>
+					<li>Chrome 14</li>
+					<li>Opera 11</li>
 				</ul>
 			</div>
+			<p class="pagetop"><a href="#header" class="arrow-up">ページの先頭へ戻る</a></p>
 		</div>
 		<div class="section">
 			<h2 id="thanks">Special thanks</h2>
-			<ul>
+			<ul class="nonstyle">
 				<li><a href="http://jquery.com/" target="_blank">jQuery: The Write Less, Do More, JavaScript Library</a></li>
 				<li><a href="http://www.kyosuke.jp/yugajs/" target="_blank">yuga.js :: Kyosuke.jp</a></li>
 				<li><a href="http://blog.webcreativepark.net/2007/07/26-010338.html" target="_blank">ブロックレベル要素の高さを揃えるheightLine.js[to-R]</a></li>
-				<li><a href="http://okomotot.com/" target="_blank">オコモトットと。</a><br />
-					アイコンを作ってもらいました。</li>
+				<li><a href="http://okomotot.com/" target="_blank">オコモトットと。</a>（アイコンを作ってもらいました。）</li>
+			</ul>
+			<p class="pagetop"><a href="#header" class="arrow-up">ページの先頭へ戻る</a></p>
+		</div>
+		<div class="section">
+			<h2 id="links">参考リンク</h2>
+			<ul class="nonstyle">
+				<li><a href="http://semooh.jp/jquery/" target="_blank">jQuery 日本語リファレンス</a></li>
+				<li><a href="http://www.findmebyip.com/litmus/" target="_blank">HTML5 &amp; CSS3 Support, Web Design Tools &amp; Support - FindMeByIP - CSS3 &amp; HTML5 Browser Support</a></li>
 			</ul>
 		</div>
 		<div class="section">
 			<h2 id="auther">制作者</h2>
-			<ul>
+			<ul class="nonstyle">
 				<li><a href="http://dounokouno.com/" target="_blank">どうのこうの</a>（ブログ）</li>
 				<li><a href="http://twitter.com/dounokouno" target="_blank">tagawa (dounokouno) on Twitter</a></li>
-				<li>dounokouno[at]gmail.com</li>
+				<li><span class="mailto">dounokouno[at]gmail.com</span></li>
 			</ul>
 			<p>ご不明点等あれば、ご連絡ください。</p>
-			<p class="pagetop">↑ <a href="#header">ページの先頭へ戻る</a></p>
+			<p class="pagetop"><a href="#header" class="arrow-up">ページの先頭へ戻る</a></p>
 		</div>
 		<!-- /content -->
 	</div>

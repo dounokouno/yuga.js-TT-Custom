@@ -1,4 +1,4 @@
-#yuga.js TT Custom - yuga.jsの個人的なカスタマイズ
+#yuga.js TT Custom
 
 ##概要
 
@@ -9,7 +9,7 @@ yuga.js の個人的なカスタマイズです。
 MIT license
 
 ##使い方
-サンプルページ（sample.html）とサンプルページのソースにてご確認ください。
+サンプルページ（sample.html）をご確認ください。
 
 ##Copyright
 Copyright (c) 2011 TAGAWA Takao, dounokouno@gmail.com

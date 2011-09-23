@@ -17,24 +17,10 @@
  * http://www.opensource.org/licenses/mit-license.php
  *
  * Since:     2011-09-18
- * Modified:  2011-09-18
+ * Modified:  2011-09-23
  */
 
 (function($) {
-
-	$(function() {
-		$.yuga.rollover();
-		$.yuga.externalLink();
-		$.yuga.scroll();
-		$.yuga.category();
-		$.yuga.tab();
-		$.yuga.stripe();
-		$.yuga.child();
-		$.yuga.icon();
-		$.yuga.heightLine();
-		$.yuga.toggle();
-		$.yuga.popup();
-	});
 
 	//---------------------------------------------------------------------
 
@@ -128,8 +114,8 @@
 			}, options);
 			var bodyClasses = $('body').attr('class').split(' ');
 			for (var i=0;i<bodyClasses.length;i++) {
-				$('body .'+bodyClasses[i]).each(function(){
-					$(this).find(c.buttonSelector).each(function(){
+				$(c.buttonSelector).each(function(){
+					if ($(this).hasClass(bodyClasses[i])) {
 						var originalSrc = $(this).attr('src');
 						var rolloverSrc = originalSrc.replace(new RegExp('('+c.currentImagePostfix+')?(\.gif|\.jpg|\.png)$'), c.currentImagePostfix+"$2");
 						//初期表示
@@ -140,7 +126,7 @@
 						}, function(){
 							$(this).attr('src', rolloverSrc);
 						});
-					});
+					}
 				});
 			}
 		},
@@ -150,7 +136,7 @@
 				windowOpen:true
 			}, options);
 			var uri = new $.yuga.Uri(location.href);
-			var e = $('a[href^="http://"]').not('a[href^="' + uri.schema + '://' + uri.host + '/' + '"]');
+			var e = $('a[href^="http://"],a[href^="https://"]').not('a[href^="' + uri.schema + '://' + uri.host + '/' + '"]');
 			if (c.windowOpen) {
 				e.click(function(){
 					window.open(this.href, '_blank');
@@ -277,10 +263,10 @@
 				tabNavList.filter(':first').trigger('click');
 			});
 		},
-		//奇数、偶数を自動追加
-		stripe: function(options) {
+		//odd,even,first-cchild、last-child、nth-childクラスを追加
+		child: function(options) {
 			var c = $.extend({
-				selector:'.stripe',
+				selector:'.child',
 				oddClass:'odd',
 				evenClass:'even'
 			}, options);
@@ -288,14 +274,6 @@
 				//JSでは0から数えるのでevenとaddを逆に指定
 				$(this).children(':odd').addClass(c.evenClass);
 				$(this).children(':even').addClass(c.oddClass);
-			});
-		},
-		//first-cchild、last-child、nth-childクラスを追加
-		child: function(options) {
-			var c = $.extend({
-				selector:'.child',
-			}, options);
-			$(c.selector).each(function(){
 				//:first-child, :last-childをクラスとして追加
 				$(this).children(':first-child').addClass('first-child');
 				$(this).children(':last-child').addClass('last-child');
@@ -316,7 +294,7 @@
 		icon: function() {
 			// 別ウィンドウクラス
 			var uri = new $.yuga.Uri(location.href);
-			var e = $('a[href^="http://"]').not('a[href^="' + uri.schema + '://' + uri.host + '/' + '"]');
+			var e = $('a[href^="http://"],a[href^="https://"]').not('a[href^="' + uri.schema + '://' + uri.host + '/' + '"]');
 			e.addClass('external');
 			// その他クラス
 			$('a[href^="mailto"]').addClass('mailto');
@@ -366,7 +344,7 @@
 			}
 		},
 		//トグル表示
-		toggle: function(options) {
+		toggleBox: function(options) {
 			var c = $.extend({
 				selector: '.toggle',
 				speed: 'normal'

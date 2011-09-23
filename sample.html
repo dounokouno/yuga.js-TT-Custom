@@ -4,13 +4,14 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta http-equiv="content-style-type" content="text/css" />
 <meta http-equiv="content-script-type" content="text/javascript" />
-<title>サンプル | yuga.js TT Custom - yuga.jsの個人的なカスタマイズ</title>
+<title>サンプル | yuga.js TT Custom</title>
 <!--<meta name="keywords" content="" />
 <meta name="description" content="" />-->
 <meta name="copyright" content="Copyright (c) dounokouno All rights reserved." />
-<link rel="stylesheet" type="text/css" href="css/screen.css" media="screen,print" />
+<link rel="stylesheet" type="text/css" href="http://etc.dounokouno.com/ttXHTMLTemplate/css/screen.css" media="screen,print" />
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/yuga.js"></script>
+<script type="text/javascript" src="js/yuga.onload.js"></script>
 <script type="text/javascript">
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-1187565-2']);
@@ -22,16 +23,33 @@ _gaq.push(['_trackPageview']);
 	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
 </script>
-<style type="text/css">
-table.alpha .even {
-	background: #eee;
-}
-</style>
 </head>
 <body class="sample">
 <div id="header">
 	<div class="container">
-		<h1>サンプル | yuga.js TT Custom - yuga.jsの個人的なカスタマイズ</h1>
+		<h1>サンプル | yuga.js TT Custom</h1>
+	</div>
+</div>
+<div id="nav">
+	<div class="container">
+		<dl>
+			<dt>メニュー</dt>
+			<dd>
+				<ul>
+					<li><a href="#general">基本的な使い方</a></li>
+					<li><a href="#rollover">ロールオーバー</a></li>
+					<li><a href="#category">カテゴリ内表示</a></li>
+					<li><a href="#externalLink">外部リンク</a></li>
+					<li><a href="#scroll">ページ内リンク</a></li>
+					<li><a href="#child">first-child、last-child、nth-child</a></li>
+					<li><a href="#icon">アイコン</a></li>
+					<li><a href="#heightLine">ボックスの高さを揃える</a></li>
+					<li><a href="#toggleBox">トグルボックス</a></li>
+					<li><a href="#popup">ポップアップウィンドウ</a></li>
+					<li><a href="#tips">Tips</a></li>
+				</ul>
+			</dd>
+		</dl>
 	</div>
 </div>
 <div id="content">
@@ -52,107 +70,185 @@ table.alpha .even {
 		<!-- /ad -->
 		<!-- content -->
 		<div class="section">
-			<h2>ロールオーバー</h2>
-			<p><a href="javascript:void(0);"><img src="img/button.gif" alt="ボタン" width="117" height="36" class="btn" /></a></p>
-		</div>
-		<div class="section">
-			<h2>カテゴリ内ページの場合の表示</h2>
-			<p>「bodyのクラス」と「btnクラスを持つ親要素のクラス」が同じ場合に、ロールオーバー画像の表示します。</p>
-			<ul>
-				<li class="sample"><a href="javascript:void(0);"><img src="img/sample.gif" alt="サンプル" width="117" height="36" class="btn" /></a><br />
-					※ロールオーバー画像になる</li>
-				<li class="button"><a href="javascript:void(0);"><img src="img/button.gif" alt="ボタン" width="117" height="36" class="btn" /></a><br />
-					※ロールオーバー画像にならない</li>
-			</ul>
-		</div>
-		<div class="section">
-			<h2>外部リンク</h2>
-			<p><a href="http://dounokouno.com">どうのこうの</a></p>
-		</div>
-		<div class="section">
-			<h2>するするスクロール</h2>
-			<ul>
-				<li>↑ <a href="#header">ヘッダーへ</a></li>
-				<li>↓ <a href="#footer">フッターへ</a></li>
-			</ul>
-		</div>
-		<div class="section">
-			<h2>ストライプ</h2>
-			<p>&lt;tbody class="stripe"&gt; の場合</p>
-			<table class="alpha">
-				<thead>
-					<th>項目1</th>
-					<th>項目2</th>
-					<th>項目3</th>
-				</thead>
-				<tbody class="stripe">
-					<tr>
-						<td>奇数行</td>
-						<td>この文章はダミーです。</td>
-						<td>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</td>
-					</tr>
-					<tr>
-						<td>偶数行</td>
-						<td>この文章はダミーです。</td>
-						<td>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</td>
-					</tr>
-					<tr>
-						<td>奇数行</td>
-						<td>この文章はダミーです。</td>
-						<td>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</td>
-					</tr>
-					<tr>
-						<td>偶数行</td>
-						<td>この文章はダミーです。</td>
-						<td>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<div class="section">
-			<h2>first-child、last-child、nth-child</h2>
-			<p>クラス名をJavaScriptで動的に表示するサンプル</p>
-			<script type="text/javascript">
-			<!--
-			$(function(){
-				$('.child').children().each(function(){
-					var text = $(this).text();
-					$(this).text(text + '（' + $(this).attr('class') + '）');
-				});;
-			});
-			//-->
-			</script>
-			<ol class="child">
-				<li>項目1</li>
-				<li>項目2</li>
-				<li>項目3</li>
-				<li>項目4</li>
-				<li>項目5</li>
-				<li>項目6</li>
-				<li>項目7</li>
-				<li>項目8</li>
-				<li>項目9</li>
-				<li>項目10</li>
-			</ol>
-		</div>
-		<div class="section">
-			<h2>アイコン</h2>
-			<ul class="nonstyle">
-				<li><a href="mailto:info@example.jp">info@example.jp</a></li>
-				<li><a href="example.pdf">example.pdf</a></li>
-				<li><a href="example.doc">example.doc</a></li>
-				<li><a href="example.docx">example.docx</a></li>
-				<li><a href="example.xls">example.xls</a></li>
-				<li><a href="example.xlsx">example.xlsx</a></li>
-				<li><a href="example.ppt">example.ppt</a></li>
-				<li><a href="example.pptx">example.pptx</a></li>
-				<li><a href="example.zip">example.zip</a></li>
-			</ul>
-		</div>
-		<div class="section">
-			<h2>ボックスの高さを揃える</h2>
+			<h2 id="general">基本的な使い方</h2>
+			<p>jquery.js yuga.js、yuga.onload.js を head 内で読み込みます。<br />
+				利用しないメソッドはコメントアウトしておきます。</p>
 			<div class="section">
-				<h3>親ボックスで揃える</h3>
+				<h3>HTML</h3>
+				<pre><code>&lt;head&gt;
+&lt;script type="text/javascript" src="js/jquery.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/yuga.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/yuga.onload.js"&gt;&lt;/script&gt;
+&lt;/head&gt;</code></pre>
+			</div>
+			<div class="section">
+				<h3>yuga.onload.js</h3>
+				<pre><code>$(function() {
+  $.yuga.rollover(); // → 利用する場合
+  //$.yuga.externalLink(); //→ 利用しない場合
+});</code></pre>
+			</div>
+			<p class="pagetop"><a href="#header" class="arrow-up">ページの先頭へ戻る</a></p>
+		</div>
+		<div class="section">
+			<h2 id="rollover">ロールオーバー</h2>
+			<p>img要素に class="btn" と設定することでロールオーバー機能をつけることができます。</p>
+			<div class="section">
+				<h3>HTML</h3>
+				<pre><code>&lt;img src="img/button.gif" alt="ボタン" width="199" height="55" <em>class="btn"</em> /&gt;</code></pre>
+			</div>
+			<div class="section">
+				<h3>動作サンプル</h3>
+				<p><a href="javascript:void(0);"><img src="img/button.gif" alt="ボタン" width="199" height="55" class="btn" /></a></p>
+			</div>
+			<p class="pagetop"><a href="#header" class="arrow-up">ページの先頭へ戻る</a></p>
+		</div>
+		<div class="section">
+			<h2 id="category">カテゴリ内ページの場合の表示</h2>
+			<p>「bodyのクラス」と「btnクラスを持つエレメントのクラス」が同じ場合に、ロールオーバー画像の表示します。</p>
+			<div class="section">
+				<h3>HTML</h3>
+				<pre><code>&lt;body <em>class="sample"</em>&gt;
+  &lt;img src="img/sample.gif" alt="サンプル" width="199" height="55" class="btn <em>sample</em>" /&gt;
+&lt;/body&gt;</code></pre>
+			</div>
+			<div class="section">
+				<h3>動作サンプル</h3>
+				<ul class="nonstyle">
+					<li><a href="javascript:void(0);"><img src="img/sample.gif" alt="サンプル" width="199" height="55" class="btn sample" /></a><br />
+						※ロールオーバー画像になる</li>
+					<li><a href="javascript:void(0);"><img src="img/button.gif" alt="ボタン" width="199" height="55" class="btn" /></a><br />
+						※ロールオーバー画像にならない</li>
+				</ul>
+			</div>
+			<p class="pagetop"><a href="#header" class="arrow-up">ページの先頭へ戻る</a></p>
+		</div>
+		<div class="section">
+			<h2 id="externalLink">外部リンク</h2>
+			<p>ドメインが違うa要素の場合、新規ウィンドウで表示します。</p>
+			<div class="section">
+				<h3>HTML</h3>
+				<pre><code>&lt;a href="http://dounokouno.com"&gt;</code></pre>
+			</div>
+			<div class="section">
+				<h3>動作サンプル</h3>
+				<p><a href="http://dounokouno.com">どうのこうの</a></p>
+			</div>
+			<p class="pagetop"><a href="#header" class="arrow-up">ページの先頭へ戻る</a></p>
+		</div>
+		<div class="section">
+			<h2 id="scroll">ページ内リンク</h2>
+			<p>ページ内リンクの場合、イージングアニメーションスクロールします。</p>
+			<div class="section">
+				<h3>動作サンプル</h3>
+				<ul class="nonstyle">
+					<li><a href="#header" class="arrow-up">ヘッダーへ</a></li>
+					<li><a href="#footer" class="arrow-down">フッターへ</a></li>
+				</ul>
+			</div>
+			<p class="pagetop"><a href="#header" class="arrow-up">ページの先頭へ戻る</a></p>
+		</div>
+		<div class="section">
+			<h2 id="child">first-child、last-child、nth-child</h2>
+			<p>childクラスの子要素に対して、first-child、last-child、nth-child、odd、evenクラスを追加します。</p>
+			<div class="section">
+				<h3>HTML</h3>
+				<pre><code>&lt;script type="text/javascript"&gt;
+&lt;!--
+$(function(){
+  $('.child').children().each(function(){
+    var text = $(this).text();
+    $(this).text(text + '（' + $(this).attr('class') + '）');
+  });
+});
+//--&gt;
+&lt;/script&gt;
+&lt;ol <em>class="child"</em>&gt;
+  &lt;li&gt;項目1&lt;/li&gt;
+  &lt;li&gt;項目2&lt;/li&gt;
+  &lt;li&gt;項目3&lt;/li&gt;
+  &lt;li&gt;項目4&lt;/li&gt;
+  &lt;li&gt;項目5&lt;/li&gt;
+  &lt;li&gt;項目6&lt;/li&gt;
+  &lt;li&gt;項目7&lt;/li&gt;
+  &lt;li&gt;項目8&lt;/li&gt;
+  &lt;li&gt;項目9&lt;/li&gt;
+  &lt;li&gt;項目10&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+				</div>
+				<div class="section">
+				<h3>表示サンプル</h3>
+				<script type="text/javascript">
+				<!--
+				$(function(){
+					$('.child').children().each(function(){
+						var text = $(this).text();
+						$(this).text(text + '（' + $(this).attr('class') + '）');
+					});
+				});
+				//-->
+				</script>
+				<ol class="child">
+					<li>項目1</li>
+					<li>項目2</li>
+					<li>項目3</li>
+					<li>項目4</li>
+					<li>項目5</li>
+					<li>項目6</li>
+					<li>項目7</li>
+					<li>項目8</li>
+					<li>項目9</li>
+					<li>項目10</li>
+				</ol>
+			</div>
+			<p class="pagetop"><a href="#header" class="arrow-up">ページの先頭へ戻る</a></p>
+		</div>
+		<div class="section">
+			<h2 id="icon">アイコン</h2>
+			<p>href属性の内容に合わせてアイコン用クラスを追加します。</p>
+			<div class="section">
+				<h3>動作サンプル</h3>
+				<ul class="nonstyle">
+					<li><a href="http://dounokouno.com">別ドメイン</a></li>
+					<li><a href="mailto:info@example.jp">info@example.jp</a></li>
+					<li><a href="example.pdf">example.pdf</a></li>
+					<li><a href="example.doc">example.doc</a></li>
+					<li><a href="example.docx">example.docx</a></li>
+					<li><a href="example.xls">example.xls</a></li>
+					<li><a href="example.xlsx">example.xlsx</a></li>
+					<li><a href="example.ppt">example.ppt</a></li>
+					<li><a href="example.pptx">example.pptx</a></li>
+					<li><a href="example.zip">example.zip</a></li>
+				</ul>
+			</div>
+			<div class="section">
+				<h3>適用後HTML</h3>
+				<pre><code>&lt;ul&gt;
+  &lt;a href="http://dounokouno.com" <em>class="external"</em>&gt;別ドメイン&lt;/a&gt;
+  &lt;a href="mailto:info@example.jp" <em>class="mailto"</em>&gt;info@example.jp&lt;/a&gt;
+  &lt;a href="example.pdf" <em>class="pdf"</em>&gt;example.pdf&lt;/a&gt;
+  &lt;a href="example.doc" <em>class="doc"</em>&gt;example.doc&lt;/a&gt;
+  &lt;a href="example.docx" <em>class="doc"</em>&gt;example.docx&lt;/a&gt;
+  &lt;a href="example.xls" <em>class="xls"</em>&gt;example.xls&lt;/a&gt;
+  &lt;a href="example.xlsx" <em>class="xls"</em>&gt;example.xlsx&lt;/a&gt;
+  &lt;a href="example.ppt" <em>class="ppt"</em>&gt;example.ppt&lt;/a&gt;
+  &lt;a href="example.pptx" <em>class="ppt"</em>&gt;example.pptx&lt;/a&gt;
+  &lt;a href="example.zip" <em>class="zip"</em>&gt;example.zip&lt;/a&gt;
+&lt;/ul&gt;</code></pre>
+			</div>
+			<p class="pagetop"><a href="#header" class="arrow-up">ページの先頭へ戻る</a></p>
+		</div>
+		<div class="section">
+			<h2 id="heightLine">ボックスの高さを揃える</h2>
+			<p>heightline-parent、heightline-xxxクラスを持つ子要素のボックスの高さを揃えます。</p>
+			<div class="section">
+				<h3>HTML</h3>
+				<pre><code>&lt;div <em>class="heightline-parent"</em>&gt;&lt;/div&gt;
+&lt;div <em>class="heightline-group1"</em>&gt;&lt;/div&gt;
+&lt;div <em>class="heightline-group1"</em>&gt;&lt;/div&gt;</code></pre>
+			</div>
+			<div class="section">
+				<h3>親ボックスで揃える（heightline-parent）</h3>
 				<div class="cols-1-1-1 heightline-parent">
 					<div class="leftbox box">
 						<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
@@ -166,7 +262,8 @@ table.alpha .even {
 				</div>
 			</div>
 			<div class="section">
-				<h3>グループで揃える（左と真ん中のボックスを揃える場合の例）</h3>
+				<h3>グループで揃える（heightline-xxx）</h3>
+				<p>左と真ん中のボックスを揃える場合の例</p>
 				<div class="cols-1-1-1">
 					<div class="leftbox box heightline-group1">
 						<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
@@ -180,7 +277,8 @@ table.alpha .even {
 				</div>
 			</div>
 			<div class="section">
-				<h3>グループで揃える（真ん中と右のボックスを揃える場合の例）</h3>
+				<h3>グループで揃える（heightline-xxx）</h3>
+				<p>真ん中と右のボックスを揃える場合の例</p>
 				<div class="cols-1-1-1">
 					<div class="leftbox box">
 						<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
@@ -193,21 +291,38 @@ table.alpha .even {
 					</div>
 				</div>
 			</div>
+			<p class="pagetop"><a href="#header" class="arrow-up">ページの先頭へ戻る</a></p>
 		</div>
 		<div class="section">
-			<h2>トグル</h2>
-			<dl>
-				<dt><a href="javascript:void(0);" class="toggle">項目1</a></dt>
-				<dd>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</dd>
-				<dt><a href="javascript:void(0);" class="toggle">項目2</a></dt>
-				<dd>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</dd>
-				<dt><a href="javascript:void(0);" class="toggle">項目3</a></dt>
-				<dd>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</dd>
-			</dl>
-		</div>
-		<div class="section">
-			<h2>ポップアップウィンドウ</h2>
+			<h2 id="toggleBox">トグルボックス</h2>
 			<div class="section">
+				<h3>HTML</h3>
+				<pre><code>&lt;dl&gt;
+  &lt;dt&gt;Q. &lt;a href="javascript:void(0);" <em>class="toggle"</em>&gt;項目1&lt;/a&gt;&lt;/dt&gt;
+  &lt;dd&gt;A. この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+			</div>
+			<div class="section">
+				<h3>動作サンプル</h3>
+				<dl>
+					<dt>Q. <a href="javascript:void(0);" class="toggle">項目1</a></dt>
+					<dd>A. この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</dd>
+					<dt>Q. <a href="javascript:void(0);" class="toggle">項目2</a></dt>
+					<dd>A. この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</dd>
+					<dt>Q. <a href="javascript:void(0);" class="toggle">項目3</a></dt>
+					<dd>A. この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</dd>
+				</dl>
+			</div>
+			<p class="pagetop"><a href="#header" class="arrow-up">ページの先頭へ戻る</a></p>
+		</div>
+		<div class="section">
+			<h2 id="popup">ポップアップウィンドウ</h2>
+			<div class="section">
+				<h3>HTML</h3>
+				<pre><code>&lt;a href="popup.html" <em>class="popup"</em>&gt;ポップアップサンプル&lt;/a&gt;</code></pre>
+			</div>
+			<div class="section">
+				<h3>動作サンプル</h3>
 				<p><a href="popup.html" class="popup">ポップアップサンプル</a></p>
 			</div>
 			<div class="section">
@@ -215,11 +330,24 @@ table.alpha .even {
 				<p>幅や高さ等、オプションで指定できます。</p>
 				<pre>$.yuga.popup({width:600, height:400});</pre>
 			</div>
+			<p class="pagetop"><a href="#header" class="arrow-up">ページの先頭へ戻る</a></p>
+		</div>
+		<div class="section">
+			<h2 id="tips">Tips</h2>
+			<p>heightLine、toggle、 popup は、必要なページにだけ読み込んだ方がいいかも。</p>
+			<pre><code>&lt;script type="text/javascript"&gt;
+$(function(){
+  $.yuga.toggle();
+  $.yuga.heightLine();
+  $.yuga.popup();
+});
+&lt;/script&gt;</code></pre>
+				<p class="pagetop"><a href="#header" class="arrow-up">ページの先頭へ戻る</a></p>
 		</div>
 		<div class="section">
 			<div class="hr"><hr /></div>
-			<p>← <a href="index.html">トップページへ戻る</a></p>
-			<p class="pagetop">↑ <a href="#header">ページの先頭へ戻る</a></p>
+			<p><a href="index.html" class="arrow-left">トップページへ戻る</a></p>
+			<p class="pagetop"><a href="#header" class="arrow-up">ページの先頭へ戻る</a></p>
 		</div>
 		<!-- /content -->
 	</div>
