@@ -112,7 +112,10 @@
 				buttonSelector: '.btn',
 				currentImagePostfix: '-over'
 			}, options);
-			var bodyClasses = $('body').attr('class').split(' ');
+			var bodyClasses = new Array();
+			if ($('body').attr('class')) {
+				bodyClasses = $('body').attr('class').split(' ');
+			}
 			for (var i=0;i<bodyClasses.length;i++) {
 				$(c.buttonSelector).each(function(){
 					if ($(this).hasClass(bodyClasses[i])) {
