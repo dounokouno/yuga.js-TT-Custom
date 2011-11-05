@@ -136,12 +136,12 @@
 		//外部リンクは別ウインドウを設定
 		externalLink: function(options) {
 			var c = $.extend({
-				windowOpen:true
+				windowOpen: true
 			}, options);
 			var uri = new $.yuga.Uri(location.href);
 			var e = $('a[href^="http://"],a[href^="https://"]').not('a[href^="' + uri.schema + '://' + uri.host + '/' + '"]');
 			if (c.windowOpen) {
-				e.click(function(){
+				e.click(function() {
 					window.open(this.href, '_blank');
 					return false;
 				});
@@ -153,18 +153,18 @@
 			//ドキュメントのスクロールを制御するオブジェクト
 			var scroller = (function() {
 				var c = $.extend({
-					easing:100,
-					step:30,
-					fps:60,
-					fragment:''
+					easing: 100,
+					step: 30,
+					fps: 60,
+					fragment: ''
 				}, options);
 				c.ms = Math.floor(1000/c.fps);
 				var timerId;
 				var param = {
-					stepCount:0,
-					startY:0,
-					endY:0,
-					lastY:0
+					stepCount: 0,
+					startY: 0,
+					endY: 0,
+					lastY: 0
 				};
 				//スクロール中に実行されるfunction
 				function move() {
@@ -172,12 +172,12 @@
 						//スクロール終了時
 						setFragment(param.hrefdata.absolutePath);
 						window.scrollTo(getCurrentX(), param.endY);
-					} else if (param.lastY == getCurrentY()) {
+					} else if (param.lastY >= getCurrentY()) {
 						//通常スクロール時
 						param.stepCount++;
 						window.scrollTo(getCurrentX(), getEasingY());
 						param.lastY = getEasingY();
-						timerId = setTimeout(move, c.ms); 
+						timerId = setTimeout(move, c.ms);
 					} else {
 						//キャンセル発生
 						if (getCurrentY()+getViewportHeight() == getDocumentHeight()) {
@@ -190,10 +190,10 @@
 					location.href = path
 				}
 				function getCurrentY() {
-					return document.body.scrollTop  || document.documentElement.scrollTop;
+					return document.body.scrollTop || document.documentElement.scrollTop;
 				}
 				function getCurrentX() {
-					return document.body.scrollLeft  || document.documentElement.scrollLeft;
+					return document.body.scrollLeft || document.documentElement.scrollLeft;
 				}
 				function getDocumentHeight(){
 					return document.documentElement.scrollHeight || document.body.scrollHeight;
@@ -214,7 +214,7 @@
 						if (options.startY == undefined) options.startY = getCurrentY();
 						param = $.extend(param, options);
 						param.lastY = param.startY;
-						timerId = setTimeout(move, c.ms); 
+						timerId = setTimeout(move, c.ms);
 					},
 					stop: function(){
 						clearTimeout(timerId);
@@ -239,8 +239,8 @@
 		//タブ機能
 		tab: function(options) {
 			var c = $.extend({
-				tabNavSelector:'.tabnav',
-				activeTabClass:'active'
+				tabNavSelector: '.tabnav',
+				activeTabClass: 'active'
 			}, options);
 			$(c.tabNavSelector).each(function(){
 				var tabNavList = $(this).find('a[href^=#], area[href^=#]');
@@ -269,9 +269,9 @@
 		//odd,even,first-cchild、last-child、nth-childクラスを追加
 		child: function(options) {
 			var c = $.extend({
-				selector:'.child',
-				oddClass:'odd',
-				evenClass:'even'
+				selector: '.child',
+				oddClass: 'odd',
+				evenClass: 'even'
 			}, options);
 			$(c.selector).each(function(){
 				//JSでは0から数えるのでevenとaddを逆に指定
@@ -323,7 +323,7 @@
 				});
 				$(this).children().height(height);
 			});
-			//heightline-xxx
+			//heightline-group
 			var classes = new Array();
 			$('body *').not(c.parentSelector+',script,style,br').each(function(){
 				if ($(this).attr('class') && $(this).attr('class').match(new RegExp(c.groupClassPrefix))) {
