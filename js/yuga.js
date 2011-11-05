@@ -17,7 +17,7 @@
  * http://www.opensource.org/licenses/mit-license.php
  *
  * Since:     2011-09-18
- * Modified:  2011-09-23
+ * Modified:  2011-11-05
  */
 
 (function($) {
