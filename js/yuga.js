@@ -17,7 +17,7 @@
  * http://www.opensource.org/licenses/mit-license.php
  *
  * Since:     2011-09-18
- * Modified:  2011-11-05
+ * Modified:  2011-11-20
  */
 
 (function($) {
@@ -294,18 +294,21 @@
 			});
 		},
 		//href属性の内容に合わせてアイコン用クラスを追加
-		icon: function() {
+		icon: function(options) {
+			var c = $.extend({
+				ignoreClass: '.nonicon'
+			}, options);
 			// 別ウィンドウクラス
 			var uri = new $.yuga.Uri(location.href);
-			var e = $('a[href^="http://"],a[href^="https://"]').not('a[href^="' + uri.schema + '://' + uri.host + '/' + '"]');
+			var e = $('a[href^="http://"],a[href^="https://"]').not('a[href^="' + uri.schema + '://' + uri.host + '/' + '"]').not(c.ignoreClass);
 			e.addClass('external');
 			// その他クラス
-			$('a[href^="mailto"]').addClass('mailto');
-			$('a[href$=".pdf"]').addClass('pdf');
-			$('a[href$=".doc"], a[href$=".docx"]').addClass('doc');
-			$('a[href$=".xls"], a[href$=".xlsx"]').addClass('xls');
-			$('a[href$=".ppt"], a[href$=".pptx"]').addClass('ppt');
-			$('a[href$=".zip"]').addClass('zip');
+			$('a[href^="mailto"]').not(c.ignoreClass).addClass('mailto');
+			$('a[href$=".pdf"]').not(c.ignoreClass).addClass('pdf');
+			$('a[href$=".doc"], a[href$=".docx"]').not(c.ignoreClass).addClass('doc');
+			$('a[href$=".xls"], a[href$=".xlsx"]').not(c.ignoreClass).addClass('xls');
+			$('a[href$=".ppt"], a[href$=".pptx"]').not(c.ignoreClass).addClass('ppt');
+			$('a[href$=".zip"]').not(c.ignoreClass).addClass('zip');
 		},
 		//ボックスの高さを揃える
 		heightLine: function(options) {
