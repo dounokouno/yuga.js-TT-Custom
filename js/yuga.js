@@ -17,7 +17,7 @@
  * http://www.opensource.org/licenses/mit-license.php
  *
  * Since:     2011-09-18
- * Modified:  2011-11-20
+ * Modified:  2011-12-11
  */
 
 (function($) {
@@ -266,20 +266,22 @@
 				tabNavList.filter(':first').trigger('click');
 			});
 		},
-		//odd,even,first-cchild、last-child、nth-childクラスを追加
+		//odd、even、first-cchild、last-child、nth-childクラスを追加
 		child: function(options) {
 			var c = $.extend({
 				selector: '.child',
 				oddClass: 'odd',
-				evenClass: 'even'
+				evenClass: 'even',
+				firstChidlClass: 'first-child',
+				lastChidlClass: 'last-child'
 			}, options);
 			$(c.selector).each(function(){
 				//JSでは0から数えるのでevenとaddを逆に指定
 				$(this).children(':odd').addClass(c.evenClass);
 				$(this).children(':even').addClass(c.oddClass);
 				//:first-child, :last-childをクラスとして追加
-				$(this).children(':first-child').addClass('first-child');
-				$(this).children(':last-child').addClass('last-child');
+				$(this).children(':first-child').addClass(c.firstChidlClass);
+				$(this).children(':last-child').addClass(c.lastChidlClass);
 				//:nth-childをクラスとして追加
 				var n=0;
 				$(this).children().each(function(){
