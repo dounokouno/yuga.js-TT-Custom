@@ -1,12 +1,12 @@
 /*
- * yuga.js 0.7.1 - 優雅なWeb制作のためのJS
+ * yuga.js 0.7.2 - 優雅なWeb制作のためのJS
  *
  * Copyright (c) 2009 Kyosuke Nakamura (kyosuke.jp)
  * Licensed under the MIT License:
  * http://www.opensource.org/licenses/mit-license.php
  *
  * Since:     2006-10-30
- * Modified:  2009-01-27
+ * Modified:  2012-02-04
  */
 
 /*
@@ -17,7 +17,7 @@
  * http://www.opensource.org/licenses/mit-license.php
  *
  * Since:     2011-09-18
- * Modified:  2011-12-11
+ * Modified:  2012-02-22
  */
 
 (function($) {
@@ -31,9 +31,9 @@
 			this.originalPath = path;
 			//絶対パスを取得
 			this.absolutePath = (function(){
-				var e = document.createElement('span');
-				e.innerHTML = '<a href="' + path + '" />';
-				return e.firstChild.href;
+				var e = document.createElement('a');
+				e.href = path;
+				return e.href;
 			})();
 			//絶対パスを分解
 			var fields = {'schema' : 2, 'username' : 5, 'password' : 6, 'host' : 7, 'path' : 9, 'query' : 10, 'fragment' : 11};
