@@ -9,7 +9,7 @@
 <meta name="description" content="" />-->
 <meta name="copyright" content="Copyright (c) dounokouno All rights reserved." />
 <link rel="stylesheet" type="text/css" href="http://etc.dounokouno.com/ttXHTMLTemplate/css/screen.css" media="screen,print" />
-<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="js/yuga.js"></script>
 <script type="text/javascript" src="js/yuga.onload.js"></script>
 <script type="text/javascript">
@@ -144,8 +144,8 @@ _gaq.push(['_trackPageview']);
 				<p>ボックスの高さを揃える</p>
 			</div>
 			<div class="section">
-				<h3>$.yuga.toggleBox（追加）</h3>
-				<p>クリックでスライド表示（FAX等に）</p>
+				<h3>$.yuga.toggle（追加）</h3>
+				<p>クリックでスライド表示（FAQ等に）</p>
 			</div>
 			<div class="section">
 				<h3>$.yuga.popup（追加）</h3>
@@ -156,6 +156,10 @@ _gaq.push(['_trackPageview']);
 		<div class="section">
 			<h2 id="history">更新履歴</h2>
 			<ul>
+				<li>2012-10-11: jQuery 1.8.2 にて動作確認</li>
+				<li>2012-10-11: Androidでするするスクロールが動作するように修正</li>
+				<li>2012-03-29: jQuery 1.7.2 にて動作確認</li>
+				<li>2012-03-29: Androidでするするスクロールが動作するように修正</li>
 				<li>2012-02-22: yuga.js 0.7.2の修正を反映<br />
 					<a href="https://gist.github.com/1716182" target="_blank" class="external">yuga.jsのXSS直したバージョンがなかなかリリースされないので勝手に直したやつ — Gist</a></li>
 				<li>2011-12-11: first-child、last-childをオプションで変更できるように修正</li>
@@ -168,19 +172,19 @@ _gaq.push(['_trackPageview']);
 		</div>
 		<div class="section">
 			<h2 id="check">動作確認環境</h2>
-			<p>2011年11月20日時点</p>
+			<p>2012年10月11日時点</p>
 			<div class="section">
 				<h3>jQuery</h3>
 				<ul>
-					<li>1.7</li>
+					<li>1.8.2</li>
 				</ul>
 				<h3>ブラウザ</h3>
 				<h4>Mac</h4>
 				<ul>
-					<li>Firefox 8</li>
-					<li>Safari 5</li>
-					<li>Chrome 15</li>
-					<li>Opera 11</li>
+					<li>Firefox 15</li>
+					<li>Safari 6</li>
+					<li>Chrome 22</li>
+					<li>Opera 12</li>
 				</ul>
 				<h4>Windows</h4>
 				<ul>
@@ -188,6 +192,24 @@ _gaq.push(['_trackPageview']);
 					<li>IE 7</li>
 					<li>IE 8</li>
 					<li>IE 9</li>
+					<li>IE 10</li>
+				</ul>
+				<h4>iPhone（シミュレータ）</h4>
+				<ul>
+					<li>iOS 5.1</li>
+					<li>iOS 6.0</li>
+				</ul>
+				<h4>iPad（シミュレータ）</h4>
+				<ul>
+					<li>iOS 5.1</li>
+					<li>iOS 6.0</li>
+				</ul>
+				<h4>Android（エミュレータ）</h4>
+				<ul>
+					<li>2.3.3</li>
+					<li>3.2</li>
+					<li>4.0.3</li>
+					<li>4.1</li>
 				</ul>
 			</div>
 			<p class="pagetop"><a href="#header" class="arrow-up">ページの先頭へ戻る</a></p>
